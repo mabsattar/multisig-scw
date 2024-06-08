@@ -35,4 +35,25 @@ contract WalletFactory {
 
         return Create2.computeAddress(byte32(salt), bytecodeHash);
     }
+
+    function createAccount(address[] memory owners, uint256 salt) external returns (Wallet) {
+    // Get the counterfactual address
+    address addr = getAddress(owners, salt);
+    // Check if the code at the counterfactual address is non-empty
+    uint256 codeSize = addr.code.length;
+    if (codeSize > 0) {
+        // If the code is non-empty, i.e. account already deployed, return the Wallet at the counterfactual address
+        return Wallet(payable(addr));
+    }
+
+    // If the code is empty, deploy a new Wallet
+    bytes memory walletInit = abi.encodeCall(Wallet.initialize, owners);
+    ERC1967Proxy proxy = new ERC1967Proxy{salt: bytes32(salt)}(
+        address(walletImplementation),
+        walletInit
+    );
+
+    // Return the newly deployed Wallet
+    return Wallet(payable(address(proxy)));
+    }
 }
