@@ -53,7 +53,8 @@ contract WalletFactory {
         walletInit
     );
 
-    // Return the newly deployed Wallet
     return Wallet(payable(address(proxy)));
     }
+
+    
 }
