@@ -33,7 +33,7 @@ contract WalletFactory {
 
         bytes32 bytecodeHash = keccak256(bytecode);
 
-        return Create2.computeAddress(byte32(salt), bytecodeHash);
+        return Create2.computeAddress(bytes32(salt), bytecodeHash);
     }
 
     function createAccount(address[] memory owners, uint256 salt) external returns (Wallet) {
