@@ -1,6 +1,7 @@
 "use client";
 
-import { useIsMounted } from "@/hooks/useIsMounted";
+import { useIsMounted } from "./hooks/useIsMounted";
+import WalletList from "../components/walletList";
 import Link from "next/link";
 import { Fragment } from "react";
 import { useAccount } from "wagmi";
@@ -25,6 +26,7 @@ export default function Home() {
               </a>
             </Link>
           )}
+             {address && <WalletList address={address} />}
         </Fragment>
       </div>
     </main>
