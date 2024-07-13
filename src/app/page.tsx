@@ -1,7 +1,7 @@
 "use client";
 
 import { useIsMounted } from "./hooks/useIsMounted";
-import WalletList from "../components/walletList";
+import WalletList from "../components/WalletList";
 import Link from "next/link";
 import { Fragment } from "react";
 import { useAccount } from "wagmi";
