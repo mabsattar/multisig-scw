@@ -1,10 +1,10 @@
-import { BUNDLER_RPC_URL, WALLET_FACTORY_ADDRESS } from "@/utils/constants";
+import { BUNDLER_RPC_URL, WALLET_FACTORY_ADDRESS } from "../utils/constants";
 import {
   entryPointContract,
   getWalletContract,
   provider,
   walletFactoryContract,
-} from "@/utils/getContracts";
+} from "../utils/getContracts";
 import { BigNumber } from "ethers";
 import { concat } from "ethers/lib/utils";
 import { Client, Presets } from "userop";
