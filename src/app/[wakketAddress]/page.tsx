@@ -1,8 +1,8 @@
-import { getUserOpForETHTransfer } from "@/utils/getUserOpForETHTransfer";
+import { getUserOpForETHTransfer } from "../utils/getUserOpForETHTransfer";
 import { parseEther } from "ethers/lib/utils";
 import { useState } from "react";
 import { useAccount, useWalletClient } from "wagmi";
-import getUserOpHash from "@/utils/getUserOpHash";
+import getUserOpHash from "../utils/getUserOpHash";
 
 // Define the WalletPage component
 export default function WalletPage({
