@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import Providers from "@/components/providers";
 import { Inter } from "next/font/google";
 import "./globals.css";

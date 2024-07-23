@@ -23,12 +23,6 @@ export default function TransactionList({
     const { data: walletClient } = useWalletClient();
     const isMounted = useIsMounted();
 
-    useEffect(() => {
-        fetchTransactions();
-      }, [address]);
-    
-      if (!isMounted) return null;
-
 
     const fetchTransactions = async () => {
         try {
@@ -182,7 +176,15 @@ export default function TransactionList({
       // Set loading to false to indicate the transaction sending process has ended
       setLoading(false);
     }
+    
   };
+
+  useEffect(() => {
+    fetchTransactions();
+  }, [address]);
+
+  if (!isMounted) return null;
+  
 
   return (
     <main className="flex flex-col justify-center p-10 items-center  gap-5">

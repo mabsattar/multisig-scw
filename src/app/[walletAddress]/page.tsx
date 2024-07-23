@@ -1,3 +1,5 @@
+'use client';
+
 import { getUserOpForETHTransfer } from "../utils/getUserOpForETHTransfer";
 import { parseEther } from "ethers/lib/utils";
 import { useState } from "react";
