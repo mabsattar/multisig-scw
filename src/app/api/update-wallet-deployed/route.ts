@@ -1,5 +1,5 @@
 // Import necessary libraries
-import { prisma } from "@/utils/db";
+import { prisma } from "../../utils/db";
 import { NextRequest, NextResponse } from "next/server";
 
 // Define an asynchronous POST function
