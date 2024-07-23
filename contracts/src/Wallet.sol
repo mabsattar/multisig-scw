@@ -21,6 +21,8 @@ contract Wallet  is BaseAccount, Initializable, UUPSUpgradeable, TokenCallbackHa
     address public immutable walletFactory;
     IEntryPoint private immutable _entryPoint;
 
+    uint256 private constant SIG_VALIDATION_FAILED = 1;
+
     event WalletInitialized(IEntryPoint indexed entryPoint, address[] owners);
 
     constructor(IEntryPoint anEntryPoint, address ourWalletFactory) {
