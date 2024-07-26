@@ -73,7 +73,8 @@ export default function CreateSCW() {
       router.push(`/`);
     } catch (error) {
       // Log any errors to the console
-      console.error(error);
+     
+      console.error(JSON.stringify(error));
   
       // If the error is an instance of Error, alert the user with the error message
       if (error instanceof Error) {
